@@ -1,1 +1,1 @@
-# fpnn-sdk-objective-c
+# fpnn-sdk-objc
