@@ -229,11 +229,6 @@
         NSRange range = NSMakeRange(0, self.peekData.pkglen);
         self.peekData.buffer = [self.buffer subdataWithRange:range];
 
-//        uint32_t remainLen = (int)(self.buffer.length - self.peekData.pkglen);
-//
-//        range = NSMakeRange(self.peekData.pkglen, remainLen);
-//        NSData * remainData = [self.buffer subdataWithRange:range];
-        
         @synchronized (self.buffer) {
             
             self.wpos = 0;
@@ -299,7 +294,6 @@
 
 - (void) onSecond:(NSInteger)timestamp {
     
-//    NSLog(@"%ld", [timestamp integerValue]);
     [self.event fireEvent:[[EventData alloc] initWithType:@"second" andTimestamp:timestamp]];
     
     [self.psr onSecond:timestamp];
