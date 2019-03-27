@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8475A6CB221E9D6800A8E04F /* build */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8475A6CE221E9D6800A8E04F /* Build configuration list for PBXAggregateTarget "build" */;
+			buildPhases = (
+				8475A6CF221E9D7C00A8E04F /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = build;
+			productName = build;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		843555F420C0128000948F3A /* FPProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 843555F320C0128000948F3A /* FPProcessor.m */; };
+		843555FB20C51B1000948F3A /* ThreadPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 843555FA20C51B1000948F3A /* ThreadPool.m */; };
+		846137DB20B69D21003BC014 /* FPData.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137DA20B69D21003BC014 /* FPData.m */; };
+		846137DE20B7C5C8003BC014 /* FPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137DD20B7C5C8003BC014 /* FPEvent.m */; };
+		846137E320BBAE0D003BC014 /* EventData.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137E220BBAE0D003BC014 /* EventData.m */; };
+		846137E720BC1E96003BC014 /* CallbackData.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137E620BC1E96003BC014 /* CallbackData.m */; };
+		846137EA20BC1EC0003BC014 /* FPCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137E920BC1EC0003BC014 /* FPCallback.m */; };
+		846137EC20BE4BF9003BC014 /* FPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137EB20BE4BF9003BC014 /* FPConfig.m */; };
+		846137F020BE8BEB003BC014 /* FPPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 846137EF20BE8BEB003BC014 /* FPPackage.m */; };
+		8489C149221FCA2900A05F1F /* FPEncryptor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84EE481E20CFCF2100742CE0 /* FPEncryptor.h */; };
+		8489C14A221FCA2F00A05F1F /* CallbackData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137E520BC1E84003BC014 /* CallbackData.h */; };
+		8489C14B221FCA3400A05F1F /* FPCallback.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137E820BC1EAE003BC014 /* FPCallback.h */; };
+		8489C14C221FCA3A00A05F1F /* FPEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137DC20B7C5B2003BC014 /* FPEvent.h */; };
+		8489C14D221FCA3E00A05F1F /* EventData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137E120BBADFA003BC014 /* EventData.h */; };
+		8489C14E221FCA5800A05F1F /* FPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84F8AB4420B3F34000CDA488 /* FPClient.h */; };
+		8489C14F221FCA5800A05F1F /* FPData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137D920B69D0A003BC014 /* FPData.h */; };
+		8489C150221FCA5800A05F1F /* FPConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137ED20BE4DC5003BC014 /* FPConfig.h */; };
+		8489C151221FCA5800A05F1F /* FPPackage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846137EE20BE8BDD003BC014 /* FPPackage.h */; };
+		8489C152221FCA5800A05F1F /* FPProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 843555F220C0127000948F3A /* FPProcessor.h */; };
+		8489C153221FCA5F00A05F1F /* ThreadPool.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 843555F920C51B0500948F3A /* ThreadPool.h */; };
+		84EE482020CFCF2E00742CE0 /* FPEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EE481F20CFCF2E00742CE0 /* FPEncryptor.m */; };
+		84F8AB4320B3F31600CDA488 /* FPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8AB4220B3F31600CDA488 /* FPClient.m */; };
+		84F8AB7120B40CFB00CDA488 /* FPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8AB7020B40CFB00CDA488 /* FPSocket.m */; };
+		84F8AB7720B4221C00CDA488 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8AB7520B4221C00CDA488 /* GCDAsyncSocket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84F8AB3420B3F2D400CDA488 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				8489C153221FCA5F00A05F1F /* ThreadPool.h in CopyFiles */,
+				8489C14E221FCA5800A05F1F /* FPClient.h in CopyFiles */,
+				8489C14F221FCA5800A05F1F /* FPData.h in CopyFiles */,
+				8489C150221FCA5800A05F1F /* FPConfig.h in CopyFiles */,
+				8489C151221FCA5800A05F1F /* FPPackage.h in CopyFiles */,
+				8489C152221FCA5800A05F1F /* FPProcessor.h in CopyFiles */,
+				8489C14D221FCA3E00A05F1F /* EventData.h in CopyFiles */,
+				8489C14C221FCA3A00A05F1F /* FPEvent.h in CopyFiles */,
+				8489C14B221FCA3400A05F1F /* FPCallback.h in CopyFiles */,
+				8489C14A221FCA2F00A05F1F /* CallbackData.h in CopyFiles */,
+				8489C149221FCA2900A05F1F /* FPEncryptor.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		843555F220C0127000948F3A /* FPProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPProcessor.h; sourceTree = "<group>"; };
+		843555F320C0128000948F3A /* FPProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPProcessor.m; sourceTree = "<group>"; };
+		843555F920C51B0500948F3A /* ThreadPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadPool.h; sourceTree = "<group>"; };
+		843555FA20C51B1000948F3A /* ThreadPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadPool.m; sourceTree = "<group>"; };
+		846137D920B69D0A003BC014 /* FPData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPData.h; sourceTree = "<group>"; };
+		846137DA20B69D21003BC014 /* FPData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPData.m; sourceTree = "<group>"; };
+		846137DC20B7C5B2003BC014 /* FPEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPEvent.h; sourceTree = "<group>"; };
+		846137DD20B7C5C8003BC014 /* FPEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPEvent.m; sourceTree = "<group>"; };
+		846137E120BBADFA003BC014 /* EventData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventData.h; sourceTree = "<group>"; };
+		846137E220BBAE0D003BC014 /* EventData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventData.m; sourceTree = "<group>"; };
+		846137E520BC1E84003BC014 /* CallbackData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallbackData.h; sourceTree = "<group>"; };
+		846137E620BC1E96003BC014 /* CallbackData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallbackData.m; sourceTree = "<group>"; };
+		846137E820BC1EAE003BC014 /* FPCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPCallback.h; sourceTree = "<group>"; };
+		846137E920BC1EC0003BC014 /* FPCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPCallback.m; sourceTree = "<group>"; };
+		846137EB20BE4BF9003BC014 /* FPConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPConfig.m; sourceTree = "<group>"; };
+		846137ED20BE4DC5003BC014 /* FPConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPConfig.h; sourceTree = "<group>"; };
+		846137EE20BE8BDD003BC014 /* FPPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPPackage.h; sourceTree = "<group>"; };
+		846137EF20BE8BEB003BC014 /* FPPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPPackage.m; sourceTree = "<group>"; };
+		84EE481E20CFCF2100742CE0 /* FPEncryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPEncryptor.h; sourceTree = "<group>"; };
+		84EE481F20CFCF2E00742CE0 /* FPEncryptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPEncryptor.m; sourceTree = "<group>"; };
+		84F8AB3620B3F2D400CDA488 /* fpnn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = fpnn.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F8AB4220B3F31600CDA488 /* FPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPClient.m; sourceTree = "<group>"; };
+		84F8AB4420B3F34000CDA488 /* FPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPClient.h; sourceTree = "<group>"; };
+		84F8AB6F20B40CE400CDA488 /* FPSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPSocket.h; sourceTree = "<group>"; };
+		84F8AB7020B40CFB00CDA488 /* FPSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSocket.m; sourceTree = "<group>"; };
+		84F8AB7520B4221C00CDA488 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		84F8AB7620B4221C00CDA488 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F8AB3320B3F2D400CDA488 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846137E020BBAD39003BC014 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				846137DC20B7C5B2003BC014 /* FPEvent.h */,
+				846137DD20B7C5C8003BC014 /* FPEvent.m */,
+				846137E120BBADFA003BC014 /* EventData.h */,
+				846137E220BBAE0D003BC014 /* EventData.m */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
+		846137E420BC1E33003BC014 /* callback */ = {
+			isa = PBXGroup;
+			children = (
+				846137E520BC1E84003BC014 /* CallbackData.h */,
+				846137E620BC1E96003BC014 /* CallbackData.m */,
+				846137E820BC1EAE003BC014 /* FPCallback.h */,
+				846137E920BC1EC0003BC014 /* FPCallback.m */,
+			);
+			path = callback;
+			sourceTree = "<group>";
+		};
+		84EE481D20CFCD5F00742CE0 /* encryptor */ = {
+			isa = PBXGroup;
+			children = (
+				84EE481E20CFCF2100742CE0 /* FPEncryptor.h */,
+				84EE481F20CFCF2E00742CE0 /* FPEncryptor.m */,
+			);
+			path = encryptor;
+			sourceTree = "<group>";
+		};
+		84F8AB2D20B3F2D400CDA488 = {
+			isa = PBXGroup;
+			children = (
+				84F8AB3820B3F2D400CDA488 /* fpnn */,
+				84F8AB3720B3F2D400CDA488 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84F8AB3720B3F2D400CDA488 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F8AB3620B3F2D400CDA488 /* fpnn.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F8AB3820B3F2D400CDA488 /* fpnn */ = {
+			isa = PBXGroup;
+			children = (
+				84EE481D20CFCD5F00742CE0 /* encryptor */,
+				846137E420BC1E33003BC014 /* callback */,
+				846137E020BBAD39003BC014 /* event */,
+				84F8AB7420B4220200CDA488 /* gcd */,
+				84F8AB4420B3F34000CDA488 /* FPClient.h */,
+				84F8AB4220B3F31600CDA488 /* FPClient.m */,
+				84F8AB6F20B40CE400CDA488 /* FPSocket.h */,
+				84F8AB7020B40CFB00CDA488 /* FPSocket.m */,
+				846137D920B69D0A003BC014 /* FPData.h */,
+				846137DA20B69D21003BC014 /* FPData.m */,
+				846137ED20BE4DC5003BC014 /* FPConfig.h */,
+				846137EB20BE4BF9003BC014 /* FPConfig.m */,
+				846137EE20BE8BDD003BC014 /* FPPackage.h */,
+				846137EF20BE8BEB003BC014 /* FPPackage.m */,
+				843555F220C0127000948F3A /* FPProcessor.h */,
+				843555F320C0128000948F3A /* FPProcessor.m */,
+			);
+			path = fpnn;
+			sourceTree = "<group>";
+		};
+		84F8AB7420B4220200CDA488 /* gcd */ = {
+			isa = PBXGroup;
+			children = (
+				84F8AB7620B4221C00CDA488 /* GCDAsyncSocket.h */,
+				84F8AB7520B4221C00CDA488 /* GCDAsyncSocket.m */,
+				843555F920C51B0500948F3A /* ThreadPool.h */,
+				843555FA20C51B1000948F3A /* ThreadPool.m */,
+			);
+			path = gcd;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F8AB3520B3F2D400CDA488 /* fpnn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F8AB3F20B3F2D400CDA488 /* Build configuration list for PBXNativeTarget "fpnn" */;
+			buildPhases = (
+				84F8AB3220B3F2D400CDA488 /* Sources */,
+				84F8AB3320B3F2D400CDA488 /* Frameworks */,
+				84F8AB3420B3F2D400CDA488 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fpnn;
+			productName = fpnn;
+			productReference = 84F8AB3620B3F2D400CDA488 /* fpnn.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F8AB2E20B3F2D400CDA488 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = funplus;
+				TargetAttributes = {
+					8475A6CB221E9D6800A8E04F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					84F8AB3520B3F2D400CDA488 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 84F8AB3120B3F2D400CDA488 /* Build configuration list for PBXProject "fpnn" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84F8AB2D20B3F2D400CDA488;
+			productRefGroup = 84F8AB3720B3F2D400CDA488 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8475A6CB221E9D6800A8E04F /* build */,
+				84F8AB3520B3F2D400CDA488 /* fpnn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8475A6CF221E9D7C00A8E04F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n#!/bin/sh\nif [ \"${ACTION}\" = \"build\" ]\nthen\n#要build的target名\ntarget_Name=${PROJECT_NAME}\necho \"target_Name=${target_Name}\"\n\n#build之后的文件夹路径\nbuild_DIR=${SRCROOT}/build\necho \"build_DIR=${build_DIR}\"\n#真机build生成的头文件的文件夹路径\nDEVICE_DIR_INCLUDE=${build_DIR}/Release-iphoneos/include/${PROJECT_NAME}\necho \"DEVICE_DIR_INCLUDE=${DEVICE_DIR_INCLUDE}\"\n#真机build生成的.a文件路径\nDEVICE_DIR_A=${build_DIR}/Release-iphoneos/${PROJECT_NAME}.a\necho \"DEVICE_DIR_A=${DEVICE_DIR_A}\"\n#模拟器build生成的.a文件路径\nSIMULATOR_DIR_A=${build_DIR}/Release-iphonesimulator/${PROJECT_NAME}.a\necho \"SIMULATOR_DIR_A=${SIMULATOR_DIR_A}\"\n\n#目标文件夹路径\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}\necho \"INSTALL_DIR=${INSTALL_DIR}\"\n#目标头文件文件夹路径\nINSTALL_DIR_Headers=${SRCROOT}/Products/${PROJECT_NAME}/Headers\necho \"INSTALL_DIR_Headers=${INSTALL_DIR_Headers}\"\n#目标.a路径\nINSTALL_DIR_A=${SRCROOT}/Products/${PROJECT_NAME}/${PROJECT_NAME}.a\necho \"INSTALL_DIR_A=${INSTALL_DIR_A}\"\n\n#判断build文件夹是否存在，存在则删除\nif [ -d \"${build_DIR}\" ]\nthen\nrm -rf \"${build_DIR}\"\nfi\n#判断目标文件夹是否存在，存在则删除该文件夹\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n#创建目标文件夹\nmkdir -p \"${INSTALL_DIR}\"\n\n#build之前clean一下\nxcodebuild -target ${target_Name} clean\n\n#模拟器build\nxcodebuild -target ${target_Name} -configuration Release -sdk iphonesimulator\n#真机build\nxcodebuild -target ${target_Name} -configuration Release -sdk iphoneos\n#复制头文件到目标文件夹\ncp -R \"${DEVICE_DIR_INCLUDE}\" \"${INSTALL_DIR_Headers}\"\n#合成模拟器和真机.a包\nlipo -create \"${DEVICE_DIR_A}\" \"${SIMULATOR_DIR_A}\" -output \"${INSTALL_DIR_A}\"\n\n#打开目标文件夹\nopen \"${INSTALL_DIR}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F8AB3220B3F2D400CDA488 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846137DE20B7C5C8003BC014 /* FPEvent.m in Sources */,
+				843555FB20C51B1000948F3A /* ThreadPool.m in Sources */,
+				84F8AB7720B4221C00CDA488 /* GCDAsyncSocket.m in Sources */,
+				846137F020BE8BEB003BC014 /* FPPackage.m in Sources */,
+				846137EA20BC1EC0003BC014 /* FPCallback.m in Sources */,
+				84F8AB7120B40CFB00CDA488 /* FPSocket.m in Sources */,
+				84EE482020CFCF2E00742CE0 /* FPEncryptor.m in Sources */,
+				84F8AB4320B3F31600CDA488 /* FPClient.m in Sources */,
+				846137E320BBAE0D003BC014 /* EventData.m in Sources */,
+				846137EC20BE4BF9003BC014 /* FPConfig.m in Sources */,
+				846137E720BC1E96003BC014 /* CallbackData.m in Sources */,
+				843555F420C0128000948F3A /* FPProcessor.m in Sources */,
+				846137DB20B69D21003BC014 /* FPData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8475A6CC221E9D6800A8E04F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8475A6CD221E9D6800A8E04F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84F8AB3D20B3F2D400CDA488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84F8AB3E20B3F2D400CDA488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F8AB4020B3F2D400CDA488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = "";
+				INSTALL_PATH = "/Users/dixun/Documents/repo/infra-fpnn-sdk/Objc/fpnn";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84F8AB4120B3F2D400CDA488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = "";
+				INSTALL_PATH = "/Users/dixun/Documents/repo/infra-fpnn-sdk/Objc/fpnn";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8475A6CE221E9D6800A8E04F /* Build configuration list for PBXAggregateTarget "build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8475A6CC221E9D6800A8E04F /* Debug */,
+				8475A6CD221E9D6800A8E04F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F8AB3120B3F2D400CDA488 /* Build configuration list for PBXProject "fpnn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F8AB3D20B3F2D400CDA488 /* Debug */,
+				84F8AB3E20B3F2D400CDA488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F8AB3F20B3F2D400CDA488 /* Build configuration list for PBXNativeTarget "fpnn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F8AB4020B3F2D400CDA488 /* Debug */,
+				84F8AB4120B3F2D400CDA488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84F8AB2E20B3F2D400CDA488 /* Project object */;
+}
