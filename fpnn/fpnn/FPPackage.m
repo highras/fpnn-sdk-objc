@@ -187,37 +187,25 @@
     
     peek.magic = (Byte *)[magic bytes];
 
-    char index = 0;
-    
-    index = [self readByte:peek.wpos fromBuffer:bytes];
+    unsigned char byte = [self readByte:peek.wpos fromBuffer:bytes];
     peek.wpos += 1;
-    peek.version = (NSInteger)FPConfig.FPNN_VERSION[index];
+    peek.version = [self indexOfByte:FPConfig.FPNN_VERSION andChar:byte];
 
-    index = [self readByte:peek.wpos fromBuffer:bytes];
+    byte = [self readByte:peek.wpos fromBuffer:bytes];
     peek.wpos += 1;
-    
-    if (index == FPConfig.FP_FLAG[0]) {
-        
-        peek.flag = 0;
-    }
-    
-    if (index == FPConfig.FP_FLAG[1]) {
-        
-        peek.flag = 1;
-    }
-    
-    index = [self readByte:peek.wpos fromBuffer:bytes];
-    peek.wpos += 1;
-    peek.mtype = (NSInteger)FPConfig.FP_MESSAGE_TYPE[index];
+    peek.flag = [self indexOfByte:FPConfig.FP_FLAG andChar:byte];
 
-    index = [self readByte:peek.wpos fromBuffer:bytes];
+    byte = [self readByte:peek.wpos fromBuffer:bytes];
     peek.wpos += 1;
-    peek.ss = (NSInteger)index;
+    peek.mtype = [self indexOfByte:FPConfig.FP_MESSAGE_TYPE andChar:byte];
+
+    byte = [self readByte:peek.wpos fromBuffer:bytes];
+    peek.wpos += 1;
+    peek.ss = (NSInteger)byte;
 
     peek.psize = [self readUInt32:peek.wpos fromBuffer:bytes];
     peek.wpos += 4;
-    
-    
+
     return peek;
 }
 
@@ -418,5 +406,20 @@
     
     NSData * data = [self readBytes:begin length:len fromBuffer:buffer];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (int) indexOfByte:(Byte *)bytes andChar:(unsigned char)byte {
+    
+    NSData * bytesData = [[NSData alloc] initWithBytes:bytes length:sizeof(bytes)];
+    
+    for (int index = 0; index < [bytesData length]; index++) {
+        
+        if (bytes[index] == byte) {
+           
+            return index;
+        }
+    }
+    
+    return -1;
 }
 @end

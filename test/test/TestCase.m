@@ -36,7 +36,7 @@
     
     [[ThreadPool shareInstance] startTimerThread];
     
-    [self.client initWithHost:@"35.167.185.139" andPort:13013 andReconnect:YES andTimeout:5 * 1000];
+    [self.client initWithHost:@"52.83.245.22" andPort:13013 andReconnect:YES andTimeout:5 * 1000];
 
     EventBlock listener = ^(EventData * event) {
         
