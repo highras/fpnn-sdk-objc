@@ -50,7 +50,6 @@
         NSNumber * expire = [NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970] * 1000 + timeout];
         [self.exMap setValue:expire forKey:key];
     }
-    
 }
 
 - (void) removeAll {
@@ -59,46 +58,87 @@
         
         [self.cbMap removeAllObjects];
     }
+    
+    @synchronized (self.exMap) {
+        
+        [self.exMap removeAllObjects];
+    }
 }
 
 - (void) execKey:(NSString *)key andData:(FPData *)data {
     
-    CallbackBlock callback = [self.cbMap objectForKey:key];
+    CallbackBlock callback = nil;
     
     @synchronized (self.cbMap) {
         
-        [self.cbMap removeObjectForKey:key];
+        NSArray * keys = [self.cbMap allKeys];
+        
+        if ([keys containsObject:key]) {
+            
+            callback = [self.cbMap objectForKey:key];
+            [self.cbMap removeObjectForKey:key];
+        }
+    }
+    
+    @synchronized (self.exMap) {
+        
+        NSArray * keys = [self.exMap allKeys];
+        
+        if ([keys containsObject:key]) {
+            
+            [self.exMap removeObjectForKey:key];
+        }
     }
 
-    if (callback != nil) {
+    if (callback == nil) {
         
-        NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
-            
-            callback([[CallbackData alloc] initWithData:data]);
-        }];
-        
-        [[ThreadPool shareInstance] executeOperation:operation andQueue:nil];
+        return;
     }
+        
+    NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        callback([[CallbackData alloc] initWithData:data]);
+    }];
+    
+    [[ThreadPool shareInstance] executeOperation:operation andQueue:nil];
 }
 
 - (void) execKey:(NSString *)key andError:(NSError *)error {
     
-    CallbackBlock callback = [self.cbMap objectForKey:key];
-
+    CallbackBlock callback = nil;
+    
     @synchronized (self.cbMap) {
         
-        [self.cbMap removeObjectForKey:key];
+        NSArray * keys = [self.cbMap allKeys];
+        
+        if ([keys containsObject:key]) {
+            
+            callback = [self.cbMap objectForKey:key];
+            [self.cbMap removeObjectForKey:key];
+        }
+    }
+    
+    @synchronized (self.exMap) {
+        
+        NSArray * keys = [self.exMap allKeys];
+        
+        if ([keys containsObject:key]) {
+            
+            [self.exMap removeObjectForKey:key];
+        }
+    }
+    
+    if (callback == nil) {
+        
+        return;
     }
 
-    if (callback != nil) {
+    NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
         
-        NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
-            
-            callback([[CallbackData alloc] initWithError:error]);
-        }];
-        
-        [[ThreadPool shareInstance] executeOperation:operation andQueue:nil];
-    }
+        callback([[CallbackData alloc] initWithError:error]);
+    }];
+    
+    [[ThreadPool shareInstance] executeOperation:operation andQueue:nil];
 }
 
 - (void) onSecond:(NSInteger)timestamp {
