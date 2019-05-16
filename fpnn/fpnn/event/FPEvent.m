@@ -43,9 +43,9 @@
     }
 }
 
-- (void) fireEvent:(EventData *)event {
+- (void) fireEvent:(EventData *)evd {
 
-    NSMutableArray * queue = [self.listeners objectForKey:event.type];
+    NSMutableArray * queue = [self.listeners objectForKey:evd.type];
     
     if (queue.count > 0) {
         
@@ -55,7 +55,7 @@
                 
                 NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
                 
-                    listener(event);
+                    listener(evd);
                 }];
             
                 [[ThreadPool shareInstance] executeOperation:operation andQueue:nil];

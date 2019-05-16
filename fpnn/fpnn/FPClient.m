@@ -56,9 +56,9 @@
     _reconnect = reconnect;
     
     __weak typeof(self) weakSelf = self;
-    _secondBlock = ^(EventData * event) {
+    _secondBlock = ^(EventData * evd) {
         
-        [weakSelf onSecond:event.timestamp];
+        [weakSelf onSecond:evd.timestamp];
     };
     
     [[ThreadPool shareInstance].event addType:@"second" andListener:self.secondBlock];
@@ -69,24 +69,21 @@
     };
     
     _sock = [[FPSocket alloc] initWithBlock:block andHost:host andPort:port andTimeout:self.timeout];
-    
-    EventBlock listener = ^(EventData * event) {
+
+    [self.sock.event addType:@"connect" andListener:^(EventData * evd) {
         
-        if ([event.type isEqualToString:@"connect"]) {
-            
-            [self onConnect];
-        } else if ([event.type isEqualToString:@"close"]) {
-            
-            [self onClose];
-        } else if ([event.type isEqualToString:@"error"]) {
-            
-            [self onError:event.error];
-        }
-    };
+        [self onConnect];
+    }];
     
-    [self.sock.event addType:@"connect" andListener:listener];
-    [self.sock.event addType:@"close" andListener:listener];
-    [self.sock.event addType:@"error" andListener:listener];
+    [self.sock.event addType:@"close" andListener:^(EventData * evd) {
+        
+        [self onClose];
+    }];
+    
+    [self.sock.event addType:@"error" andListener:^(EventData * evd) {
+        
+        [self onError:evd.error];
+    }];
 }
 
 - (BOOL) isOpen {
