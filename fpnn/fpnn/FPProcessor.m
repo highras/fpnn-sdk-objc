@@ -49,12 +49,12 @@
 
 - (void) destroy {
     
-    FPEvent * event = [self getEvent];
-    
-    if (event != nil) {
-        
-        [event removeAll];
-    }
+//    FPEvent * event = [self getEvent];
+//
+//    if (event != nil) {
+//
+//        [event removeAll];
+//    }
 }
 @end
 
