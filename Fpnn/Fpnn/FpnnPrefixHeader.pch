@@ -1,0 +1,28 @@
+//
+//  FpnnPrefixHeader.pch
+//  Fpnn
+//
+//  Created by zsl on 2019/12/10.
+//  Copyright © 2019 FunPlus. All rights reserved.
+//
+
+#ifndef FpnnPrefixHeader_pch
+#define FpnnPrefixHeader_pch
+
+#define Client *(fpnn::TCPClientPtr*)((void* (*)(id, SEL))[self methodForSelector:NSSelectorFromString(@"getPrivateClient")])(self, NSSelectorFromString(@"getPrivateClient"))
+#define Quest(quest) *(fpnn::FPQuestPtr*)((void* (*)(id, SEL))[quest methodForSelector:NSSelectorFromString(@"getQuest")])(quest, NSSelectorFromString(@"getQuest"))
+#define Listen *(FPNNCppConnectionListenPtr*)((void* (*)(id, SEL))[self methodForSelector:NSSelectorFromString(@"getPrivatelistenCall")])(self, NSSelectorFromString(@"getPrivatelistenCall"))
+
+#ifdef DEBUG
+
+#define FPNSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define FPNSLog(...)
+
+#endif
+
+
+
+#endif /* FpnnPrefixHeader_pch */

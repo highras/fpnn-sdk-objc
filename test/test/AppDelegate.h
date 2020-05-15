@@ -1,17 +1,15 @@
 //
 //  AppDelegate.h
-//  test
+//  Test
 //
-//  Created by dixun on 2018/5/22.
-//  Copyright © 2018年 funplus. All rights reserved.
+//  Created by zsl on 2019/11/27.
+//  Copyright © 2019 FunPlus. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@property(nonatomic,strong)UIWindow * window;
 
 @end
 
